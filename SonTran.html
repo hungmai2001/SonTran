@@ -1,21 +1,21 @@
-!DOCTYPE html
-html lang=en
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    titleControl LEDtitle
-head
-body
-    button id=toggleButtonToggle LEDbutton
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control LED</title>
+</head>
+<body>
+    <button id="toggleButton">Toggle LED</button>
 
-    script
+    <script>
         const toggleButton = document.getElementById('toggleButton');
-        toggleButton.addEventListener('click', async () = {
-             Gửi yêu cầu tới API backend khi nút được nhấn
-            const response = await fetch('toggle-led', { method 'POST' });
+        toggleButton.addEventListener('click', async () => {
+            // Gửi yêu cầu tới API backend khi nút được nhấn
+            const response = await fetch('/toggle-led', { method: 'POST' });
             const data = await response.json();
-            console.log(data);  Log response từ API backend (nếu cần)
+            console.log(data); // Log response từ API backend (nếu cần)
         });
-    script
-body
-html
+    </script>
+</body>
+</html>
